@@ -4,7 +4,7 @@ import Hotel from "../models/Hotel.js";
 
 //Get All
 router.get("/", async(req, res)=>{
-  console.log(req.body);
+  //console.log(req.body);
   try{
     const hotels = await Hotel.find(req.params.id);
     res.status(200).json(hotels);
@@ -15,7 +15,7 @@ router.get("/", async(req, res)=>{
 
 //Get One
 router.get("/:id", async(req, res)=>{
-  console.log(req.body);
+  //console.log(req.body);
   try{
     const hotel = await Hotel.findById(req.params.id);
     res.status(200).json(hotel);
@@ -49,7 +49,7 @@ router.put("/:id", async(req, res)=>{
 
 //Delete
 router.delete("/:id", async(req, res)=>{
-  console.log(req.body);
+  //console.log(req.body);
   try{
     await Hotel.findByIdAndDelete(req.params.id);
     res.status(200).json("Hotel has been Removed!");
