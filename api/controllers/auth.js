@@ -38,6 +38,7 @@ export const login=async(req, res, next)=>{
     const {password, isAdmin, ...otherDetails}=user._doc;
     res.cookie("access_token", token, {
       httpOnly: true //it dosen't allow client secret to reach this cookie
+      //Now whenever we go to CRUD on Hotels jwt will verify the token and if the token is valid, Then it will check user info if iit si admin then it will proceed
     }).status(200).json({...otherDetails});
   }catch(err){
     next(err);
